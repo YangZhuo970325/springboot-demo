@@ -18,6 +18,7 @@
     <modules>
         <module>zookeeper</module>
         <module>memcache</module>
+        <module>activemq</module>
     </modules>
 
     <dependencies>
