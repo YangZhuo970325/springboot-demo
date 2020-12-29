@@ -1,0 +1,12 @@
+server:
+  port: 18082
+memcache:
+  servers: 127.0.0.1:11211
+  failover: true
+  initConn: 10
+  minConn: 20
+  maxConn: 1000
+  maintSleep: 50
+  nagle: false
+  socketTo: 3000
+  aliveCheck: true
