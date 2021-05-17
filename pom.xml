@@ -19,6 +19,9 @@
         <module>zookeeper</module>
         <module>memcache</module>
         <module>activemq</module>
+        <module>minio</module>
+        <module>mybatis-plus</module>
+        <module>design-pattern</module>
     </modules>
 
     <dependencies>

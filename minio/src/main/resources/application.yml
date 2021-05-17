@@ -1,0 +1,11 @@
+minio:
+  url: http://192.168.146.146:9000
+  access-key: hzero.admin
+  secret-key: hzero.hand.2020.
+  bucket-name: demo-minio
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 2048MB
+      max-file-size: 2048MB
