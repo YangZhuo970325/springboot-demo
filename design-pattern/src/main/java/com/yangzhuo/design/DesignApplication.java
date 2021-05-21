@@ -1,11 +1,11 @@
 package com.yangzhuo.design;
 
-import com.yangzhuo.design.composite.component.Component;
-import com.yangzhuo.design.composite.component.Employee;
-import com.yangzhuo.design.composite.component.Manager;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class DesignApplication {
     public static void main(String[] args) {
-        
+        SpringApplication.run(DesignApplication.class);
     }
 }
