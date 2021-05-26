@@ -24,6 +24,7 @@
         <module>design-pattern</module>
         <module>rocketmq</module>
         <module>strategy-pattern</module>
+        <module>rocketmq-demo</module>
     </modules>
 
     <dependencies>
