@@ -25,6 +25,7 @@
         <module>rocketmq</module>
         <module>strategy-pattern</module>
         <module>rocketmq-demo</module>
+        <module>dozer</module>
     </modules>
 
     <dependencies>

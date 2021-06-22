@@ -1,10 +1,13 @@
-package com.yangzhuo.design;
+package com.yangzhuo.dozer;
 
 
 import com.yangzhuo.design.composite.component.Component;
 import com.yangzhuo.design.composite.component.Employee;
 import com.yangzhuo.design.composite.component.Manager;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DesignTest {
     
@@ -37,5 +40,21 @@ public class DesignTest {
         CFO.addComonpent(clerk);
         
         boss.check();
+    }
+    
+    @Test
+    public void test1() {
+        Doc doc = new Doc();
+        Header header = new Header();
+        header.setHeaderName("headerName1");
+        header.setDoc(doc);
+        List<Line> lines = new ArrayList<>();
+        Line line = new Line();
+        line.setLineName("lineName1");
+        line.setDoc(doc);
+        lines.add(line);
+        doc.setHeader(header);
+        doc.setLineList(lines);
+        System.out.println(doc.getHeader().getDoc().getHeader().getHeaderName());
     }
 }
