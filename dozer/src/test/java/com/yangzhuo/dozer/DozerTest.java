@@ -56,7 +56,18 @@ public class DozerTest {
             String field = String.valueOf(mapList.get(i).get("name"));
             System.out.println("field: " + field);
         }
-        
+    }
+
+    @Test
+    public void test3() {
+        List<String> list = new ArrayList<>();
+        list.add("12");
+        list.add("23");
+        list.add("34");
+        list.add("45");
+        //String[] array = (String[])list.toArray();
+        String[] array2 = list.toArray(new String[list.size()]);
+        System.out.println(array2[0]);
     }
     
     /**

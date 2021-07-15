@@ -23,8 +23,9 @@
         <module>mybatis-plus</module>
         <module>design-pattern</module>
         <module>rocketmq</module>
-        <module>strategy-pattern</module>
+        <module>java8</module>
         <module>rocketmq-demo</module>
+        <module>elasticsearch</module>
         <module>dozer</module>
     </modules>
 
