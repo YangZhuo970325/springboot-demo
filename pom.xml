@@ -28,6 +28,7 @@
         <module>elasticsearch</module>
         <module>dozer</module>
         <module>es-spring</module>
+        <module>quartz</module>
     </modules>
 
     <dependencies>
