@@ -27,6 +27,7 @@
         <module>rocketmq-demo</module>
         <module>elasticsearch</module>
         <module>dozer</module>
+        <module>es-spring</module>
     </modules>
 
     <dependencies>
