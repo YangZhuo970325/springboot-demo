@@ -57,6 +57,7 @@ public class DistZkLock implements ZkLock, Watcher {
                     zooKeeper.exists("/" + businessName + "/" + previousNode, true);
                     break;
                 } else {
+                    //  设置下一个节点的前序节点，以便设置监听
                     previousNode = node;
                 }
             }

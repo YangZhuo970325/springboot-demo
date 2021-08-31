@@ -1,0 +1,7 @@
+server:
+  port: 18082
+zk:
+  url: 127.0.0.1:2181
+  sessionTimeout: 15000
+  connectTimeout: 30000
+  namespace: user
