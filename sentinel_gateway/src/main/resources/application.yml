@@ -1,17 +1,25 @@
 server:
-  port: 18082
+  port: 9033
 
 ### 应用名称
 spring:
   application:
-    name: sentinel-springcloud
+    name: sentinel-gateway
     
-  ### 设置Sentinel控制台的主机地址和端口
   cloud:
+    gateway:
+      routes: 
+        - id: sentinel-feign-gateway
+          # 路由转发
+          uri: lb://sentinel-springcloud
+          # uri: http://localhost:18082
+          # 断言
+          predicates:
+            - Path=/**
     sentinel:
       transport:
         dashboard: localhost:9000
-        
+
 eureka:
   client:
     service-url:

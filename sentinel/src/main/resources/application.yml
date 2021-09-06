@@ -1,7 +1,12 @@
 server:
   port: 18081
-zk:
-  url: 127.0.0.1:2181
-  sessionTimeout: 15000
-  connectTimeout: 30000
-  namespace: user
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9010/eureka
+      
+#设置eureka服务的名称
+spring:
+  application:
+    name: sentinel-hi

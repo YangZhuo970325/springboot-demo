@@ -1,0 +1,15 @@
+#设置服务端口
+server:
+  port: 9010
+
+#设置eureka服务的名称
+spring:
+  application:
+    name: eureka-server
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9010/eureka
+    register-with-eureka: false
+    fetch-registry: false
