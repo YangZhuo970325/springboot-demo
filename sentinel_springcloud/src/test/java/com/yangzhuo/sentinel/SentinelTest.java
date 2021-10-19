@@ -13,7 +13,7 @@ import java.util.List;
 public class SentinelTest {
 
     public static void main(String[] args) {
-        // 配置规则.
+        /*// 配置规则.
         initFlowRules();
 
         while (true) {
@@ -25,7 +25,13 @@ public class SentinelTest {
                 // 处理被流控的逻辑
                 System.out.println("blocked!");
             }
+        }*/
+
+        System.out.println("开始时间：" + System.currentTimeMillis());
+        for (int i = 0; i < 10000000; i++) {
+            
         }
+        System.out.println("结束时间：" + System.currentTimeMillis());
     }
 
     private static void initFlowRules(){
@@ -38,4 +44,6 @@ public class SentinelTest {
         rules.add(rule);
         FlowRuleManager.loadRules(rules);
     }
+    
+    
 }

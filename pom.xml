@@ -35,6 +35,7 @@
         <module>eureka_server</module>
         <module>sentinel_gateway</module>
         <module>thread-pool</module>
+        <module>redis</module>
     </modules>
 
     <properties>
