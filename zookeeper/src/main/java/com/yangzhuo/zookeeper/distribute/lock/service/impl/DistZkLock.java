@@ -7,6 +7,7 @@ import org.apache.zookeeper.data.Stat;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.function.Consumer;
 
 public class DistZkLock implements ZkLock, Watcher {
@@ -18,6 +19,9 @@ public class DistZkLock implements ZkLock, Watcher {
     private String businessNode;
 
     private final Consumer<String> closeHandler;
+
+    // 方式二
+    // CountDownLatch countDownLatch = new CountDownLatch(1);
 
     public DistZkLock(String connectString, String businessName, Consumer<String> closeHandler) throws IOException {
         this.zooKeeper = new ZooKeeper(connectString, 30000, this);
@@ -36,7 +40,7 @@ public class DistZkLock implements ZkLock, Watcher {
                         ZooDefs.Ids.OPEN_ACL_UNSAFE,
                         CreateMode.PERSISTENT);
             }
-            // 创建锁 瞬时有序节点 /order/order_00000001
+            // 创建锁 临时有序节点 /order/order_00000001
             businessNode = zooKeeper.create("/" + businessName + "/" + businessName + "_", businessName.getBytes(),
                     ZooDefs.Ids.OPEN_ACL_UNSAFE,
                     CreateMode.EPHEMERAL_SEQUENTIAL);
@@ -93,6 +97,8 @@ public class DistZkLock implements ZkLock, Watcher {
             synchronized (this) {
                 notify();
             }
+            // 方式二
+            //countDownLatch.countDown();
         }
     }
 }
