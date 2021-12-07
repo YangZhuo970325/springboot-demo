@@ -12,6 +12,7 @@ import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StreamUtils;
 
+import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,7 @@ public class OrderDelayQueue implements IDelayQueue<Order>, InitializingBean {
 
     @Override
     public List<Order> dequeue(String min, String max, String offset, String limit) {
-        RedisScript<List<String>> redisScript = RedisScript.of(DEQUEUE_LUA_SHA.get(), List.class);
+        RedisScript<List> redisScript = RedisScript.of(DEQUEUE_LUA_SHA.get(), List.class);
         List<Object> keys = new ArrayList<>();
         keys.add(ORDER_QUEUE);
         keys.add(min);
