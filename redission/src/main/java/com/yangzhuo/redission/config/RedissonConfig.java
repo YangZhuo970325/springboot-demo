@@ -1,4 +1,4 @@
-package com.yangzhuo.redis.redission.config;
+package com.yangzhuo.redission.config;
 
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
