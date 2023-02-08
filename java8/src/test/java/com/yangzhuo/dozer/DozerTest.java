@@ -1,6 +1,5 @@
 package com.yangzhuo.dozer;
 
-import com.yangzhuo.java8.dto.Scores;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.junit.Test;
@@ -8,7 +7,6 @@ import org.junit.Test;
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -159,30 +157,6 @@ public class DozerTest {
             }
         }
         return null;
-    }
-
-    @Test
-    public void test1() {
-        
-        //Scores scores = new Scores("yz", 24, "male", "math", 100);
-        //String filedType = getFiledType(scores, "name");
-        String fieldName = "name";
-        String fieldType = "";
-        Field[] fields = Scores.class.getFields();
-        for (int i = 0; i < fields.length; i++) {
-            if (fieldName.equals(fields[i].getName())) {
-                fieldType = fields[i].getType().getTypeName();
-            }
-        }
-        if (BigDecimal.class.getName().equals(fieldType)) {
-            System.out.println("123");
-        } else if (String.class.getName().equals(fieldType)) {
-            System.out.println("234");
-        } else if (Date.class.getName().equals(fieldType)) {
-            System.out.println("345");
-        } else {
-            System.out.println("456");
-        }
     }
 }
 

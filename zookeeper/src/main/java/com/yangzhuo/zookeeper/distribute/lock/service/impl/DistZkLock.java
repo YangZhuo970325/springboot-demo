@@ -7,7 +7,6 @@ import org.apache.zookeeper.data.Stat;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 import java.util.function.Consumer;
 
 public class DistZkLock implements ZkLock, Watcher {
@@ -61,7 +60,10 @@ public class DistZkLock implements ZkLock, Watcher {
                     zooKeeper.exists("/" + businessName + "/" + previousNode, true);
                     break;
                 } else {
-                    //  设置下一个节点的前序节点，以便设置监听
+                    // 设置下一个节点的前序节点，以便设置监听（需要监听的节点后移）
+                    // 例如当前获取锁的节点是node_00001,    node_00002监听node_00001
+                    // 当前业务创建的节点是node_00003,则previousNode节点从node_00001后移至node_00002
+                    // 便于遍历到node_00003时，进行监听
                     previousNode = node;
                 }
             }

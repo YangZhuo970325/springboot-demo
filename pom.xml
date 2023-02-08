@@ -36,6 +36,11 @@
         <module>sentinel_gateway</module>
         <module>thread-pool</module>
         <module>redis</module>
+        <module>aop</module>
+        <module>sharding-jdbc</module>
+        <module>shading-proxy</module>
+        <module>nginx-demo</module>
+        <module>freemarker</module>
     </modules>
 
     <properties>
